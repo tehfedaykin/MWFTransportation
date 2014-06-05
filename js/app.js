@@ -14,8 +14,11 @@ $(document).ready(function(){
     for (var i = 0; i < row.length; i++) {
       var $row = $(row[i]);
       var string = $row.html().toString();
+      console.log(string);
       if(string.indexOf(name) <0){
-        $row.hide();
+        if(string.indexOf('<th>') < 0){
+          $row.hide();
+        }
       }
       else{
         $row.show();
